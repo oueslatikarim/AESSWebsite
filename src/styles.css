@@ -66,6 +66,12 @@
   border-radius: .25rem;
 }
 
+.ima{
+
+  width: 100px; /* Adjust the width as needed */
+  height: 100px; 
+}
+
 .member-profile {
   top: -50px;
   left: 0;

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Layouts/header/header.component';
 import { FooterComponent } from './Layouts/footer/footer.component';
-import { HomeComponent } from './Layouts/home/home.component';
+import { HomeComponent } from './Pages/home/home.component';
 import { BlogComponent } from '../app/Pages/blog/blog.component';
 import { HelpComponent } from '../app/Pages/help/help.component';
 import { BlogDetailsComponent } from '../app/Pages/blog-details/blog-details.component';

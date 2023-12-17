@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+
+    this.loadExternalScript('../assets/js/jquery.slicknav.min.js').then(() => {
+      // The script has been loaded, you can now use its functionality.
+      console.log('Script loaded successfully');
+    }).catch(() => {
+      // There was an error loading the script.
+      console.error('Error loading script');
+    });
   }
 
+  private loadExternalScript(src: string): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      const script = this.renderer.createElement('script');
+      script.type = 'text/javascript';
+      script.src = src;
+      script.onload = () => {
+        resolve();
+      };
+      script.onerror = () => {
+        reject();
+      };
+      this.renderer.appendChild(document.body, script);
+    });
+  }
 }
