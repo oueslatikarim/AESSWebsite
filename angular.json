@@ -138,6 +138,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "ngx-deploy-ftp:deploy"
         }
       }
     }
